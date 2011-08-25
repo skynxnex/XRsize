@@ -1,0 +1,58 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+	<title>Testfil</title>
+	<link rel="stylesheet" type="text/css" href="css/jquery-ui.css" />
+	 <style type="text/css">
+		body {
+			background-color: silver;
+		}
+		label.error {
+			display: block;
+			color: red;
+			font-size: smaller;
+		}
+		label.valid {
+			display: block;
+			color: green;
+			font-size: smaller;
+		}
+		
+  </style>
+	<script src="js/jquery.js" type="text/javascript"></script>
+	<script src="js/jquery.validate.js" type="text/javascript"></script>
+	<script src="js/jquery-ui.js" type="text/javascript"></script>
+	<script src="js/error_mess.js" type="text/javascript"></script>
+	<script src="js/validate.js" type="text/javascript"></script>
+</head>
+<body>
+<div id="login">
+	<form id="newpass" name="changepass">
+		<fieldset>
+			<legend>Ett valideringsförsök</legend>
+			<p>
+				<label for="oldpass">Gammalt lösen:</label>
+				<input id="oldpass" type="text" name="oldpass" class="required" maxlength=12 />
+			</p>
+			<p>
+				<label for="pwd">Nytt lösen:</label>
+				<input id="pwd" type="text" name="pwd" maxlength=12 class="required" />
+			</p>
+			<p>
+				<label for="pwdval">Nytt lösen igen:</label>
+				<input id="pwdval" type="text" name="pwdval" maxlength=12 class="required" />
+			</p>
+			<p>
+				<label for="email">E-post</label>
+				<input id="email" type="text" name="email"  />
+			</p>
+			<p>
+				<label for="date">Datum</label>
+				<input id="date" type="text" name="date"  />
+			</p>
+			<p><input name="changepass" type="submit" value="Ändra lösen" /></p>
+		</fieldset>
+	</form>
+</div>
+</body>

@@ -1,0 +1,52 @@
+<div data-role="page" data-theme="a">
+<script type="text/javascript">
+	$(document).ready(function () {
+		$("#addform").validate({
+			rules: {
+				date: {
+					required: true,
+					date: true
+		    	}
+			}
+	     });
+	});
+    </script>
+	<div  data-role="header"> 
+		<a data-rel="back" data-icon="back" data-iconpos="notext" data-direction="reverse" class="ui-btn-left jqm-back">Hem</a>
+		<h1>XRSize.me</h1> 
+		<a href="index.html" data-icon="home" data-iconpos="notext" data-direction="reverse" class="ui-btn-right jqm-home">Hem</a>
+	</div> 
+	<div  data-role="content">
+		<form method="post" action="index.php" id="addform">
+			<div data-role="fieldcontain">
+				<label for="date">Datum:</label>
+				<input type="text" id="date" name="date" value=""  />
+			</div>
+			<div data-role="fieldcontain" >
+				<label for="time" class="select">Välj tid:</label>
+				<select name="time" id="time" data-theme="b">
+					<option value="30">30min</option>
+					<option value="45">45min</option>
+					<option value="60">60min</option>
+					<option value="75">75min</option>
+					<option value="90">90min</option>
+				</select>
+			</div>
+			<div data-role="fieldcontain" >
+				<label for="type" class="select">Typ av träning:</label>
+				<select name="type" id="type" data-theme="b">
+					<option value="löpning">Löpning</option>
+					<option value="zumba">Zumba</option>
+					<option value="flowin">Flowin</option>
+					<option value="pump">Pump</option>
+					<option value="rodd">Rodd</option>
+				</select>
+			</div>
+				<button data-role="button" type="reset" data-theme="c">Ångra</button>
+				<button data-role="button" type="submit" data-theme="b">Skicka</button>
+		</form>
+	</div>
+	<div data-role="footer" data-position="fixed">
+		<h4>Lägga till</h4>
+	</div>
+</div>

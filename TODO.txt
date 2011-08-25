@@ -1,0 +1,32 @@
+TODO!
+Man ska kunna ...
+---------------------------------------
+ändra lösenord KLAR!
+se andras träningstillfällen KLAR!
+ta bort träningstillfälle KLAR!
+välja mellan fler antal träningsformer
+validering av formulär innan man skickar KLAR!
+ändra sin profil KLAR!
+kommentera olika träningsformer
+betygsätta träningsformer
+se statistik för träningsformer
+	vilken som är populärast
+	vilken som fått högst betyg
+	vilken som har flest kommentarer
+träningstips från andra
+	
+kunna skicka personliga meddelanden
+svara på personliga meddelanden
+
+se vilka som är inloggade
+
+admininterface
+	lägga till användare
+	lägga till nyhet
+	
+peppbloggen ska vara gruppvis
+
+komma ihåg mig funktion, sätta en kaka KLAR!
+koppla en ikon till varje användare
+
+ändra datepicker validering till svenska
