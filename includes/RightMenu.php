@@ -11,6 +11,7 @@
 		}
 		
 		public function generate() {
+			$returnvalue = '';
 			$returnvalue .= '<div id="rightmenu" class="corners">';
 			if($this->log == 1) { // logged in
 				$returnvalue .= '<div id="peppheader"><h4>Peppbloggen</h4><p class="small">Senaste 10</p></div>';

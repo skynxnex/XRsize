@@ -20,13 +20,13 @@
 		
 		public function __construct($params, $log) {
 			$this->log = $log;
-			$this->action = $action;
-			$this->id = $id;
-			$this->pagenr = $pagenr;
-			$this->weeknr = $weeknr;
-			$this->get = $get;
-			$this->area = $area;
-			$this->subarea = $subarea;
+			// $this->action = $action;
+			// $this->id = $id;
+			// $this->pagenr = $pagenr;
+			// $this->weeknr = $weeknr;
+			// $this->get = $get;
+			// $this->area = $area;
+			// $this->subarea = $subarea;
 			$this->top = new Top();
 			$this->banner = new Banner();
 			$this->topmenu = new TopMenu();

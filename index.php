@@ -30,16 +30,15 @@
 			}
 		}
 	}
-	
-	
-	
+
 	#remove the directory path we don't want 
 	$request  = str_replace("/XRsize/", "", $_SERVER['REQUEST_URI']); 
 	#split the path by '/'  
 	$params     = explode("/", $request); 
 	$values = array();
 	$length = count($params);
-
+	
+	
 	if($_SERVER['HTTP_HOST'] != 'localhost') {
 		for($i = 1; $i <= $length; $i++) {
 			$values[] = $params[$i];
@@ -51,13 +50,10 @@
 	if($_SERVER['REQUEST_METHOD'] == "POST") {
 		$postman = new PostManager($_POST);
 	}
-	
+		
 	$log = null;
 	if(isset($_SESSION['user'])) {
 		$log = $_SESSION['user'];
-	}
-	if(isset($_SESSION['admin'])) {
-		header('location: '.WEB_ROOT.'admin/');
 	}
 	
 	$manager = new Manager($values, $log);

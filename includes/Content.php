@@ -20,7 +20,7 @@
 		private $params;
 		private $func;
 	
-		public function __construct($params, $log) {
+		public function __construct($params = array(), $log) {
 			$this->params = $params;
 			$this->log = $log;
 			$this->q = new Query();
@@ -31,6 +31,7 @@
 	
 		public function generate() {
 			$func = '';
+			$page = '';
 			if(strlen($this->params[1]) >= 1) {
 				$func = $this->params[1];
 			} else {

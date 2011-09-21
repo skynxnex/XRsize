@@ -31,6 +31,10 @@ class PostManager {
 			$this->logout();
 		}elseif($this->postdata['cookiereset'] == 1) {
 			$this->cookiereset();
+		}elseif($this->postdata['adduser']) {
+			$this->addUser();
+		}elseif($this->postdata['addeventtype']) {
+			$this->addEventType();
 		}
 	}
 
@@ -50,7 +54,7 @@ class PostManager {
 				if(sha1($pass) == $checkpass) {
 					$_SESSION['user'] = 1;
 					$_SESSION['id'] = $result['id'];
-					if($name == 'admin') {
+					if($result['admin'] == 100) {
 						$_SESSION['admin'] = 1;
 					}
 					$success = true;
@@ -106,7 +110,7 @@ class PostManager {
 		return $success;
 	}
 	
-	private function logout () {
+	public function logout () {
 			session_destroy();
 			setcookie('username');
 			setcookie('password');
@@ -220,5 +224,25 @@ class PostManager {
 		} else {
 			header('location: '.WEB_ROOT.'event/error');
 		}
+	}
+	
+	private function addUser() {
+		$this->db->toNull();
+		$data = array(	'user_name'	=> $this->postdata['uname'],
+						'name' 		=> $this->postdata['name'],
+						'pass' 		=> sha1($this->postdata['pass']),
+						'email' 	=> $this->postdata['email'],
+						'group_id' 	=> $this->postdata['group_id']
+		
+		);
+		$result = $this->db->insert("user", $data);
+		$_SESSION['saved'] = "Laggt till användare ".$this->postdata['uname'];
+	}
+	
+	private function addEventType() {
+		$this->db->toNull();
+		$data = array('name' => $this->postdata['eventtype']);
+		$result = $this->db->insert("eventtype", $data);
+		$_SESSION['saved'] = "Laggt till träningstyp ".$this->postdata['eventtype'];
 	}
 }

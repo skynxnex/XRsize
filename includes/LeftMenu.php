@@ -11,8 +11,12 @@
 		
 		public function generate () {
 			$returnvalue = '';
+			$admin = '';
 			if($this->log == 1) { // logged in
 				$id = $_SESSION['id'];
+				if($_SESSION["admin"] == 1) {
+					$admin = '<li><a href='.WEB_ROOT.'admin/>Administration</a></li>';
+				}
 				$results = $this->q->getUserInfo($id);
 				$name = $results[0]['name'];
 				$returnvalue .= '	<div id="leftmenu" class="corners">
@@ -32,6 +36,7 @@
 												<li><img src="'.WEB_ROOT.'css/images/eleganticons/images/List.png" alt="Träningsformer" /><a href="'.WEB_ROOT.'eventtype">Träningsformer</a></li>
 												<li><img src="'.WEB_ROOT.'css/images/eleganticons/images/Paper.png" alt="Allmän statistik" /><a href="'.WEB_ROOT.'stats/allstats">Allmän statistik</a></li>
 												<li><img src="'.WEB_ROOT.'css/images/star.png" alt="Stjärnligan" /><a href="'.WEB_ROOT.'stats/stars">Stjärnligan</a></li>
+												'.$admin.'
 											</ul>
 										</div>
 									</div>';
