@@ -276,14 +276,13 @@ class MysqlDB {
    }
 
 
-   public function __destruct()
-   {
+   public function __destruct() {
       $this->_mysql->close();
    }
    
    public function getLastInsertedId() {
-$id = $this->_mysql->insert_id;
-return $id;
+		$id = $this->_mysql->insert_id;
+		return $id;
    }
    
    public function toNull() {

@@ -153,18 +153,31 @@ class PostManager {
 		$time = stripslashes($time);
 		$comment = $this->postdata['comment'];
 		$comment = stripslashes($comment);
+		$new = $this->postdata['neweventtype'];
+		$new = stripslashes($new);
+		if($new != "") {
+			$data = array('name' => $this->postdata['neweventtype']);
+			$result = $this->db->insert('eventtype', $data);
+			if(!$result) {
+				header('location: '.WEB_ROOT.'event/error');
+				$_SESSION['error'] = 'Couldnt save eventtype';
+			} else {
+				$this->postdata['type'] = $this->db->getLastInsertedId();
+			}
+		}
 		
 		$data = array ( 'user_id' => $_SESSION['id'],
 						'date' => $date,
 						'time' => $time,
 						'eventtype_id' => $this->postdata['type'],
 						'comment' => $comment);
-		
+		$this->db->toNull();
 		$result = $this->db->insert("event", $data);
 		if($result == 1) {
 			header('location: '.WEB_ROOT.'event/addcomplete');
 		}else {
 			header('location: '.WEB_ROOT.'event/error');
+			$_SESSION['error'] = 'Couldnt save event. eventtypeid = '.$this->postdata;
 		}
 	}
 	

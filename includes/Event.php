@@ -61,6 +61,7 @@
 				$returnvalue .= '<option value="'.$result['id'].'">'.$result['name'].'</option>';
 			}							
 			$returnvalue .=	'</select><p>';
+			$returnvalue .= '<p>Eller lägg till egen:</p><input id="neweventtype" name="neweventtype" />';
 			$returnvalue .= '<p>Kommentar:</p><textarea class="elasticinput" rows="2" cols="40" id="comment"name="comment"></textarea>';
 			$returnvalue .=	'<p><input class="button" name="addevent" type="submit" value="Skicka" /></p>
 							</fieldset></form>';
@@ -216,6 +217,7 @@
 		public function error () {
 			$page .= '<img src="'.WEB_ROOT.'css/images/eleganticons/images/X.png" alt="" />';
 			$page .= '<h3>Fel!</h3><p>Någonting gick fel. Kontakta webmaster om det är ett återkommande problem.</p>';
+			var_dump( $_SESSION['error']);
 			return $page;	
 		}
 					
